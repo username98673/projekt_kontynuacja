@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Gra {
 
-    private ArrayList<Integer> wylosowanee;
-    private ArrayList<Integer> wpisane;
-    private LinkedList<Integer> trafione;
+    private static ArrayList<Integer> wylosowanee = new ArrayList<>();
+    private ArrayList<Integer> wpisane = new ArrayList<>();
+    private LinkedList<Integer> trafione = new LinkedList<>();
     private void wylosujLiczby(int ile) {
-        for (int i = 0; i < ile; i++) {
+        while(wylosowanee.size()<6){
             int liczba = (int) (Math.random() * 100 + 1);
             while (wylosowanee.contains(liczba)) {
                 liczba = (int) (Math.random() * 100 + 1);
@@ -40,7 +40,7 @@ public class Gra {
                 }
             }
         }
-        private void zagraj(){
+        public void zagraj(){
             wylosujLiczby(6);
             wpiszZKlawiatury(6);
             sprawdz();
